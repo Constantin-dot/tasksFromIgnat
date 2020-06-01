@@ -4,21 +4,10 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-export type StateType = {
-    name: string
-    message: string
-    time: string
-}
-
-let state: StateType = {
-    name: "Constantin",
-    message: "Hi!What's up?",
-    time: "15:23"
-}
 
 ReactDOM.render(
   <React.StrictMode>
-    <App state={state}/>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,26 +1,23 @@
 import React from 'react';
-import './App.modul.css';
-import {StateType} from './index';
+import './App.module.css';
+import FirstTask from "./tasks/FirstTask/FirstTask";
 
-
-type PropsType = {
-    state: StateType
+export type StateType = {
+    name: string
+    message: string
+    time: string
 }
 
+let state: StateType = {
+    name: "Constantin",
+    message: "Hi!What's up?",
+    time: "15:23"
+}
 
-const App: React.FC<PropsType> = (props) => {
-  return (
-    <div className={"App"}>
-      <div className={"ava"}>
-        <img src={"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSz3oe7au6Voj7bwkAdVqEhbemBlvOSDNsybGBb-1nN_q4gPhB3&usqp=CAU"} alt={"ava"}></img>
-      </div>
-      <div className={"messageBox"}>
-        <div className={"authorName"}>{props.state.name}</div>
-        <div className={"message"}>{props.state.message}</div>
-        <div className={"time"}>{props.state.time}</div>
-      </div>
-    </div>
-  );
+const App = () => {
+    return (
+        <FirstTask state={state}/>
+        )
 }
 
 export default App;
