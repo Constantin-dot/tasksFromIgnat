@@ -1,16 +1,16 @@
 import React from 'react';
 import classes from './FirstTask.module.css';
-import {StateType} from "../../App";
+import {StateType1} from "../../state";
 
 type PropsType = {
-    state: StateType
+    state: StateType1
 }
 
 const FirstTask : React.FC<PropsType> = (props) => {
     return (
         <div className={classes.wrap}>
             <div className={classes.ava}>
-                <img src={"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSz3oe7au6Voj7bwkAdVqEhbemBlvOSDNsybGBb-1nN_q4gPhB3&usqp=CAU"} alt={"ava"}></img>
+                <img src={props.state.img} alt={"ava"}></img>
             </div>
             <div className={classes.messageBox}>
                 <div className={classes.authorName}>{props.state.name}</div>
