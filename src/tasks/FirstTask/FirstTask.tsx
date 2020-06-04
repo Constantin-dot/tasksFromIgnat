@@ -1,23 +1,23 @@
 import React from 'react';
-import classes from './FirstTask.module.css';
-import {StateType1} from "../../state";
+import Message from "./Message";
 
-type PropsType = {
-    state: StateType1
+export type StateType = {
+    img: string
+    name: string
+    message: string
+    time: string
 }
 
-const FirstTask : React.FC<PropsType> = (props) => {
+const FirstTask = () => {
+    let state: StateType = {
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSz3oe7au6Voj7bwkAdVqEhbemBlvOSDNsybGBb-1nN_q4gPhB3&usqp=CAU",
+        name: "Constantin",
+        message: "Hi!What's up?",
+        time: "15:23"
+    }
+
     return (
-        <div className={classes.wrap}>
-            <div className={classes.ava}>
-                <img src={props.state.img} alt={"ava"}></img>
-            </div>
-            <div className={classes.messageBox}>
-                <div className={classes.authorName}>{props.state.name}</div>
-                <div className={classes.message}>{props.state.message}</div>
-                <div className={classes.time}>{props.state.time}</div>
-            </div>
-        </div>
+        <Message state={state}/>
     );
 }
 

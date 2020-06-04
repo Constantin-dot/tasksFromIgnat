@@ -1,23 +1,13 @@
 import React from 'react';
 import './App.module.css';
 import FirstTask from "./tasks/FirstTask/FirstTask";
-import SecondTask from "./tasks/SecondTask/Second Task";
-import {StateType1, StateType2} from "./state";
+import SecondTask from "./tasks/SecondTask/SecondTask";
 
-type PropsType = {
-    state1: StateType1
-    state2: StateType2
-}
-
-const App : React.FC<PropsType> = (props) => {
+const App = () => {
     return (
         <div>
-            <FirstTask
-                state={props.state1}
-            />
-            <SecondTask
-                state={props.state2}
-            />
+            <FirstTask />
+            <SecondTask />
         </div>
     )
 }
