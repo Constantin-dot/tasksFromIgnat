@@ -1,5 +1,5 @@
 import React from 'react';
-import Message from "./Message";
+import FirstTaskMessage from "./FirstTaskMessage";
 
 export type StateType = {
     img: string
@@ -17,7 +17,7 @@ const FirstTask = () => {
     }
 
     return (
-        <Message state={state}/>
+        <FirstTaskMessage state={state}/>
     );
 }
 

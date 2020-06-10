@@ -1,0 +1,60 @@
+.wrap {
+  display: grid;
+  margin: 20px auto;
+  width: 400px;
+  grid-template-rows: 1fr 3fr;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas:
+          ". messageBox messageBox messageBox"
+          ". messageBox messageBox messageBox"
+          ". messageBox messageBox messageBox"
+          "ava messageBox messageBox messageBox";
+  justify-items: stretch;
+}
+
+.ava {
+  grid-area: ava;
+  height: 30px;
+  width: 30px;
+  justify-self: center;
+}
+
+.ava img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.messageBox {
+  grid-area: messageBox;
+  background-color: cornflowerblue;
+  position: relative;
+}
+
+.messageBox::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 20px solid cornflowerblue;
+  border-left: 20px solid transparent;
+  left: -20px;
+}
+
+.authorName {
+  margin-left: 10px;
+  font-weight: bold;
+  ;
+}
+
+.message {
+  margin-left: auto;
+  margin-right: auto;
+  width: 10em;
+}
+
+.time {
+  text-align: end;
+  margin-right: 10px;
+}

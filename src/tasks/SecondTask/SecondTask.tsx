@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import Message from "./Message";
+import SecondTaskMessage from "./SecondTaskMessage";
 
 export type CasesType = {
     id: number
@@ -56,7 +56,7 @@ function SecondTask() {
     }
 
     return (
-        <Message
+        <SecondTaskMessage
             state={state}
             cases={casesForMessage}
             removeCases={removeCases}

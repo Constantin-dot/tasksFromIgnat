@@ -6,7 +6,7 @@ type PropsType = {
     state: StateType
 }
 
-const Message : React.FC<PropsType> = (props) => {
+const FirstTaskMessage : React.FC<PropsType> = (props) => {
     return (
         <div className={classes.wrap}>
             <div className={classes.ava}>
@@ -21,4 +21,4 @@ const Message : React.FC<PropsType> = (props) => {
     );
 }
 
-export default Message;
+export default FirstTaskMessage;

@@ -9,7 +9,7 @@ type PropsType = {
     changeCases: Function
 }
 
-function Message(props: PropsType)  {
+function SecondTaskMessage(props: PropsType)  {
 
     return (
         <div className={classes.wrap}>
@@ -46,4 +46,4 @@ function Message(props: PropsType)  {
     );
 }
 
-export default Message;
+export default SecondTaskMessage;
