@@ -5,6 +5,7 @@ export type CasesType = {
     id: number
     case: string
     level: string
+    isDone: boolean
 }
 
 export type StateType = {
@@ -13,7 +14,7 @@ export type StateType = {
     time: string
 }
 
-export type FilterValuesType = "all" | "low" | "middle" | "high" | "highest";
+// export type FilterValuesType = "all" | "low" | "middle" | "high" | "highest";
 
 function SecondTask() {
     
@@ -24,21 +25,29 @@ function SecondTask() {
     }
 
     let [cases, setCases] = useState<Array<CasesType>>([
-        {id: 1, case:"work", level:"middle"},
-        {id: 2, case:"study", level:"highest"},
-        {id: 3, case:"reading", level:"high"},
-        {id: 4, case:"walks", level:"low"}
+        {id: 1, case:"work", level:"middle", isDone: false},
+        {id: 2, case:"study", level:"highest", isDone: true},
+        {id: 3, case:"reading", level:"high", isDone: false},
+        {id: 4, case:"walks", level:"low", isDone: true}
     ])
 
-    let [filter, setFilter] = useState<FilterValuesType>("all");
+    let [filter, setFilter] = useState<string>("all");
 
     function removeCases(id: number) {
         let filteredCases = cases.filter( c => c.id !==id)
         setCases(filteredCases);
     }
 
-    function changeCases(value: FilterValuesType) {
+    function changeCases(value: string) {
         setFilter(value);
+    }
+
+    function changeStatus(caseId: number, isDone: boolean) {
+        let findCase = cases.find( t => t.id === caseId);
+        if (findCase) {
+            findCase.isDone = isDone;
+        }
+        setCases([...cases]);
     }
 
     let casesForMessage = cases;
@@ -54,6 +63,12 @@ function SecondTask() {
     if (filter === "highest") {
         casesForMessage = cases.filter(c => c.level === "highest");
     }
+    if (filter === "active") {
+        casesForMessage = cases.filter(c => c.isDone === false);
+    }
+    if (filter === "completed") {
+        casesForMessage = cases.filter(c => c.isDone === true);
+    }
 
     return (
         <SecondTaskMessage
@@ -61,6 +76,8 @@ function SecondTask() {
             cases={casesForMessage}
             removeCases={removeCases}
             changeCases={changeCases}
+            changeStatus={changeStatus}
+            filter={filter}
         />
 
     )

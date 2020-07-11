@@ -1,12 +1,17 @@
 import React from 'react';
 import classes from './SecondTask.module.css';
 import {CasesType, StateType} from './SecondTask';
+import {UniversalCheckbox} from "../../common/Checkbox";
+import {DeleteButton} from "../../common/DeleteButton";
+import {UniButton} from "../../common/UniButton";
 
 type PropsType = {
     state: StateType
     cases: Array<CasesType>
-    removeCases: Function
-    changeCases: Function
+    removeCases: (id: number) => void
+    changeCases: (value: string) => void
+    changeStatus: (id: number, isDone:boolean) => void
+    filter: string
 }
 
 function SecondTaskMessage(props: PropsType)  {
@@ -14,31 +19,63 @@ function SecondTaskMessage(props: PropsType)  {
     return (
         <div className={classes.wrap}>
             <div className={classes.ava}>
-                <img src={props.state.img} alt={"ava"}></img>
+                <img src={props.state.img} alt={"ava"}/>
             </div>
             <div className={classes.messageBox}>
                 <div className={classes.authorName}>{props.state.name}</div>
                 <div className={classes.cases}>
-                    <ul>
-                        {
-                            props.cases.map(c => <li key={c.id}>
+                    {
+                        props.cases.map(c => {
+
+                            return <div key={c.id} className={c.isDone ? "is-done" : ""}>
+                                <UniversalCheckbox
+                                    changeStatus={props.changeStatus}
+                                    isDone={c.isDone}
+                                    id={c.id}
+                                />
                                 <span>{c.case}</span> - <span>{c.level}</span>
-                                <button onClick={() => {props.removeCases(c.id)}}>x</button>
-                            </li>)
-                        }
-                    </ul>
+                                <DeleteButton onClick={props.removeCases} id={c.id}/>
+                            </div>
+                        })
+                    }
                 </div>
                 <div>
-                    <button onClick={ () => {props.changeCases("all")}}>all
-                    </button>
-                    <button onClick={ () => {props.changeCases("low")}}>low
-                    </button>
-                    <button onClick={ () => {props.changeCases("middle")}}>middle
-                    </button>
-                    <button onClick={ () => {props.changeCases("high")}}>high
-                    </button>
-                    <button onClick={ () => {props.changeCases("highest")}}>highest
-                    </button>
+
+                    <UniButton onClick={props.changeCases}
+                               value={"low"}
+                               variant={"low"}
+                               filter={props.filter}
+                    />
+                    <UniButton onClick={props.changeCases}
+                               value={"middle"}
+                               variant={"middle"}
+                               filter={props.filter}
+                    />
+                    <UniButton onClick={props.changeCases}
+                               value={"high"}
+                               variant={"high"}
+                               filter={props.filter}
+                    />
+                    <UniButton onClick={props.changeCases}
+                               value={"highest"}
+                               variant={"highest"}
+                               filter={props.filter}
+                    />
+                    <UniButton onClick={props.changeCases}
+                               value={"active"}
+                               variant={"active"}
+                               filter={props.filter}
+                    />
+                    <UniButton onClick={props.changeCases}
+                               value={"completed"}
+                               variant={"completed"}
+                               filter={props.filter}
+                    />
+                    <UniButton onClick={props.changeCases}
+                               value={"all"}
+                               variant={"all"}
+                               filter={props.filter}
+                    />
                 </div>
                 <div className={classes.time}>{props.state.time}</div>
             </div>

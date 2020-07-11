@@ -1,32 +1,23 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {useState} from 'react';
 import classes from "./ThirdTask.module.css";
 import {NamesArrayType, StateType} from "./ThirdTask";
+import {AddButton} from "../../common/AddButton";
+import {Input} from "../../common/Input";
 
 type PropsType = {
     state: StateType
     namesArr: Array<NamesArrayType>
-    addFollower: (followerName: string) => void
+    addItem: (followerName: string) => void
 }
-
-
 
 const ThirdTaskMessage : React.FC<PropsType> = (props) => {
     let [name, setName] = useState("");
+    let [error, setError] = useState<string>('');
 
     const onClickHandler = () => {
-        if (name !== '') {
-            props.addFollower(name)
+        if (name.trim() !== '') {
+            props.addItem(name)
             setName("");
-        }
-    }
-
-    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        setName(e.currentTarget.value)
-    }
-
-    const onKeyPressHandler = (e: any) => {
-        if (e.charCode === 13) {
-            onClickHandler();
         }
     }
 
@@ -38,12 +29,19 @@ const ThirdTaskMessage : React.FC<PropsType> = (props) => {
             <div className={classes.messageBox}>
                 <div className={classes.authorName}>{props.state.myName}</div>
                 <div className={classes.message}>
-                    <input
-                        value={name}
-                        onChange={onChangeHandler}
-                        onKeyPress={onKeyPressHandler}
+                    <Input
+                        addItem={props.addItem}
+                        item={name}
+                        setItem={setName}
+                        error={error}
+                        setError={setError}
                     />
-                    <button onClick={onClickHandler}>add</button>
+                    <AddButton
+                        addItem={onClickHandler}
+                        item={name}
+                        setItem={setName}
+                        setError={setError}
+                    />
                     <span> {props.state.namesArr.length} </span>
                 </div>
                 <div className={classes.time}>{props.state.time}</div>

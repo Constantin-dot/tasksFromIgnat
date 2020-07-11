@@ -33,8 +33,7 @@ const ThirdTask = () => {
         <ThirdTaskMessage
             state={state}
             namesArr={namesArr}
-
-            addFollower={addFollower}
+            addItem={addFollower}
         />
     );
 }
