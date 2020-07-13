@@ -32,8 +32,9 @@ function SecondTaskMessage(props: PropsType)  {
                                     changeStatus={props.changeStatus}
                                     isDone={c.isDone}
                                     id={c.id}
+                                    case={c.case}
+                                    level={c.level}
                                 />
-                                <span>{c.case}</span> - <span>{c.level}</span>
                                 <DeleteButton onClick={props.removeCases} id={c.id}/>
                             </div>
                         })

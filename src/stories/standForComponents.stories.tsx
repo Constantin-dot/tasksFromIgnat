@@ -17,7 +17,7 @@ export const UniversalInput = () => {
 }
 
 export const Checkbox = () => {
-    return <UniversalCheckbox changeStatus={x => x} isDone={true} id={1}/>;
+    return <UniversalCheckbox changeStatus={x => x} isDone={true} id={1} case={'Study'} level={'high'}/>;
 }
 
 export const UniversalAddButton = () => {

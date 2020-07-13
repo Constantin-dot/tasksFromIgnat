@@ -1,10 +1,12 @@
 import React, {ChangeEvent} from "react";
-import {Checkbox} from "@material-ui/core";
+import {Checkbox, FormControlLabel} from "@material-ui/core";
 
 type CheckboxPropsType = {
     changeStatus: (id: number, isDone: boolean) => void
     isDone: boolean
     id: number
+    case: string
+    level: string
 }
 
 export const UniversalCheckbox = (props: CheckboxPropsType) => {
@@ -12,10 +14,15 @@ export const UniversalCheckbox = (props: CheckboxPropsType) => {
         props.changeStatus(props.id, e.currentTarget.checked);
     }
 
-    return <Checkbox
-        color={"default"}
-        inputProps={{ 'aria-label': 'checkbox with default color' }}
-        checked={props.isDone}
-        onChange={onStatusChangeHandler}
+    return <FormControlLabel
+        control={
+            <Checkbox
+                color={"default"}
+                 inputProps={{ 'aria-label': 'checkbox with default color' }}
+                checked={props.isDone}
+                onChange={onStatusChangeHandler}
+            />
+        }
+        label={props.case + ' - ' + props.level}
     />
 };
