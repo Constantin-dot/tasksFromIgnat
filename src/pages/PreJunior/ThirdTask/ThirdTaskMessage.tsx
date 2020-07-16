@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import classes from "./ThirdTask.module.css";
 import {NamesArrayType, StateType} from "./ThirdTask";
-import {AddButton} from "../../common/AddButton";
-import {Input} from "../../common/Input";
+import {AddButton} from "../../../common/AddButton";
+import {Input} from "../../../common/Input";
 
 type PropsType = {
     state: StateType

@@ -15,7 +15,7 @@ export const UniButton = (props: UniButtonPropsType) => {
     }
 
     return (
-        <Button variant={props.filter === props.variant ? "contained" : "outlined"}
+        <Button variant={ props.filter === props.variant ? "contained" : "outlined"}
                 onClick={setButton}
         >
             {props.value}

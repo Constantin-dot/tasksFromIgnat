@@ -18,7 +18,7 @@ export const UniversalCheckbox = (props: CheckboxPropsType) => {
         control={
             <Checkbox
                 color={"default"}
-                 inputProps={{ 'aria-label': 'checkbox with default color' }}
+                inputProps={{ 'aria-label': 'checkbox with default color' }}
                 checked={props.isDone}
                 onChange={onStatusChangeHandler}
             />

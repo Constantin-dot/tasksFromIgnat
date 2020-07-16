@@ -1,9 +1,9 @@
 import React from 'react';
 import classes from './SecondTask.module.css';
 import {CasesType, StateType} from './SecondTask';
-import {UniversalCheckbox} from "../../common/Checkbox";
-import {DeleteButton} from "../../common/DeleteButton";
-import {UniButton} from "../../common/UniButton";
+import {UniversalCheckbox} from "../../../common/Checkbox";
+import {DeleteButton} from "../../../common/DeleteButton";
+import {UniButton} from "../../../common/UniButton";
 
 type PropsType = {
     state: StateType
