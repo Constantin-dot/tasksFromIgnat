@@ -11,14 +11,13 @@ const App = () => {
     return (
         <HashRouter>
             <div className={'app-wrapper'}>
-                <Navbar />
+                <div className={'nav'}>
+                    <Navbar />
+                </div>
                 <div className={'app-wrapper-content'}>
                     <Route path={'/pre_junior'} component={PreJunior} />
                     <Route path={'/junior'} component={Junior} />
                     <Route path={'/junior_plus'} component={JuniorPlus} />
-                    {/*<PreJunior />*/}
-                    {/*<Junior />*/}
-                    {/*<JuniorPlus />*/}
                 </div>
             </div>
         </HashRouter>

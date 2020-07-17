@@ -15,7 +15,7 @@ const useStyles = makeStyles({
         margin: 10,
     },
     item: {
-        color: "gold",
+        color: "black",
         textDecoration: "none"
     }
 });
@@ -57,18 +57,18 @@ function SwipeableTemporaryDrawer() {
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <List>
-                <ListItem button key={'PreJunior'} >
-                    <NavLink to="/pre_junior" >
+                <ListItem key={'PreJunior'} >
+                    <NavLink to="/pre_junior" className={classes.item}>
                         Pre Junior
                     </NavLink>
                 </ListItem>
-                <ListItem button key={'Junior'} >
-                    <NavLink to="/junior" >
+                <ListItem key={'Junior'} >
+                    <NavLink to="/junior" className={classes.item}>
                         Junior
                     </NavLink>
                 </ListItem>
-                <ListItem button key={'JuniorPlus'} >
-                    <NavLink to="/junior_plus" >
+                <ListItem key={'JuniorPlus'} >
+                    <NavLink to="/junior_plus" className={classes.item}>
                         Junior Plus
                     </NavLink>
                 </ListItem>
@@ -82,7 +82,7 @@ function SwipeableTemporaryDrawer() {
         <div>
             {(['left', 'right', 'top', 'bottom'] as Anchor[]).map((anchor) => (
                 <React.Fragment key={anchor}>
-                    <Button variant={"outlined"}
+                    <Button variant={"contained"}
                             className={classes.button}
                             onClick={toggleDrawer(anchor, true)}
                     >
