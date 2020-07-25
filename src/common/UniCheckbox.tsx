@@ -9,7 +9,7 @@ type CheckboxPropsType = {
     level: string
 }
 
-export const UniversalCheckbox = (props: CheckboxPropsType) => {
+export const UniCheckbox = (props: CheckboxPropsType) => {
     const onStatusChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         props.changeStatus(props.id, e.currentTarget.checked);
     }

@@ -1,10 +1,11 @@
 import React from 'react';
 import {Input} from "../common/Input";
-import {UniversalCheckbox} from "../common/Checkbox";
 import {AddButton} from "../common/AddButton";
 import {DeleteButton} from "../common/DeleteButton";
 import {UniButton} from "../common/UniButton";
-import {action} from "@storybook/addon-actions";
+import EditableSpan from "../common/EditableSpan";
+import {UniCheckbox} from "../common/UniCheckbox";
+
 
 
 export default {
@@ -16,8 +17,12 @@ export const UniversalInput = () => {
     return <Input setError={x => x} setItem={x => x} item={''} error={''} addItem={x => x}/>;
 }
 
-export const Checkbox = () => {
-    return <UniversalCheckbox changeStatus={x => x} isDone={true} id={1} case={'Study'} level={'high'}/>;
+export const UniversalCheckbox = () => {
+    return <UniCheckbox changeStatus={x => x} isDone={true} id={1} case={'Study'} level={'high'}/>;
+}
+
+export const UniversalButton = () => {
+    return <UniButton onClick={() => {}} value={'button name'} />
 }
 
 export const UniversalAddButton = () => {
@@ -26,8 +31,8 @@ export const UniversalAddButton = () => {
 
 export const UniversalDeleteButton = () => {
     return <DeleteButton onClick={x => x} id={1} />
-};
+}
 
-export const UniversalButton = () => {
-    return <UniButton onClick={x => x} value={'button name'} filter={'all'} variant={"outlined"}/>
+export const UniversalEditableSpan = () => {
+    return <EditableSpan item={'new item'} addItem={x => x} setItem={x => x} error={''} setError={x => x}/>
 }

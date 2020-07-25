@@ -1,9 +1,12 @@
 import React from 'react';
+import SixthTask from "./SixthTask";
 
 const Junior = () => {
+
     return (
         <div>
-            {'Hello, Junior!'}
+            {'Hello, here Junior page is!'}
+            <SixthTask />
         </div>
     )
 }

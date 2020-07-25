@@ -1,9 +1,9 @@
 import React from 'react';
 import classes from './SecondTask.module.css';
 import {CasesType, StateType} from './SecondTask';
-import {UniversalCheckbox} from "../../../common/Checkbox";
+import {UniCheckbox} from "../../../common/UniCheckbox";
 import {DeleteButton} from "../../../common/DeleteButton";
-import {UniButton} from "../../../common/UniButton";
+// import {UniButton} from "../../../common/UniButton";
 
 type PropsType = {
     state: StateType
@@ -28,7 +28,7 @@ function SecondTaskMessage(props: PropsType)  {
                         props.cases.map(c => {
 
                             return <div key={c.id} className={c.isDone ? "is-done" : ""}>
-                                <UniversalCheckbox
+                                <UniCheckbox
                                     changeStatus={props.changeStatus}
                                     isDone={c.isDone}
                                     id={c.id}
@@ -42,41 +42,27 @@ function SecondTaskMessage(props: PropsType)  {
                 </div>
                 <div>
 
-                    <UniButton onClick={props.changeCases}
-                               value={"low"}
-                               variant={"low"}
-                               filter={props.filter}
-                    />
-                    <UniButton onClick={props.changeCases}
-                               value={"middle"}
-                               variant={"middle"}
-                               filter={props.filter}
-                    />
-                    <UniButton onClick={props.changeCases}
-                               value={"high"}
-                               variant={"high"}
-                               filter={props.filter}
-                    />
-                    <UniButton onClick={props.changeCases}
-                               value={"highest"}
-                               variant={"highest"}
-                               filter={props.filter}
-                    />
-                    <UniButton onClick={props.changeCases}
-                               value={"active"}
-                               variant={"active"}
-                               filter={props.filter}
-                    />
-                    <UniButton onClick={props.changeCases}
-                               value={"completed"}
-                               variant={"completed"}
-                               filter={props.filter}
-                    />
-                    <UniButton onClick={props.changeCases}
-                               value={"all"}
-                               variant={"all"}
-                               filter={props.filter}
-                    />
+                    {/*<UniButton onClick={props.changeCases}*/}
+                    {/*           value={"low"}*/}
+                    {/*/>*/}
+                    {/*<UniButton onClick={props.changeCases}*/}
+                    {/*           value={"middle"}*/}
+                    {/*/>*/}
+                    {/*<UniButton onClick={props.changeCases}*/}
+                    {/*           value={"high"}*/}
+                    {/*/>*/}
+                    {/*<UniButton onClick={props.changeCases}*/}
+                    {/*           value={"highest"}*/}
+                    {/*/>*/}
+                    {/*<UniButton onClick={props.changeCases}*/}
+                    {/*           value={"active"}*/}
+                    {/*/>*/}
+                    {/*<UniButton onClick={props.changeCases}*/}
+                    {/*           value={"completed"}*/}
+                    {/*/>*/}
+                    {/*<UniButton onClick={props.changeCases}*/}
+                    {/*           value={"all"}*/}
+                    {/*/>*/}
                 </div>
                 <div className={classes.time}>{props.state.time}</div>
             </div>

@@ -64,10 +64,10 @@ function SecondTask() {
         casesForMessage = cases.filter(c => c.level === "highest");
     }
     if (filter === "active") {
-        casesForMessage = cases.filter(c => c.isDone === false);
+        casesForMessage = cases.filter(c => !c.isDone);
     }
     if (filter === "completed") {
-        casesForMessage = cases.filter(c => c.isDone === true);
+        casesForMessage = cases.filter(c => !c.isDone);
     }
 
     return (
