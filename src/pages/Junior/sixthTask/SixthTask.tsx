@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
-import EditableSpan from "../../common/EditableSpan";
-import {UniButton} from "../../common/UniButton";
+import EditableSpan from "../../../common/EditableSpan";
+import {UniButton} from "../../../common/UniButton";
+import style from './SixthTask.module.css';
 
 export function saveState<T> (key: string, state: T) {
     const stateAsString = JSON.stringify(state);
@@ -18,34 +19,22 @@ type StateType = {
     y: number
 }
 
-// type MessageType = {
-//     id: string
-//     x: string
-// }
-// type StoreType = Array<MessageType>;
-
-// let store: StoreType = [];
-
 const SixthTask = () => {
     let [item, setItem] = useState("This is EditableSpan.");
     let [error, setError] = useState<string>("");
 
     const addMessage = () => {
-        // store.push({id: v1(), x: item});
 
         saveState<StateType>("test", {x: item, y: 1});
     }
 
     const restoreMessage = () => {
-        // let lastItem = store[store.length - 1];
-        // setItem(lastItem.x);
-
         const state: StateType = restoreState<StateType>("test", {x: "", y: 0});
         setItem(state.x);
     }
 
     return (
-        <div>
+        <div className={style.sixth}>
             <div>
                 <EditableSpan
                     item={item}
