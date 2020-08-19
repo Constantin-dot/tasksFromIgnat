@@ -7,6 +7,7 @@ type ListType = {
 }
 
 type UniRadioPropsType = {
+    value: string
     title: string
     list: Array<ListType>
     onChange: (city: string) => void
@@ -16,7 +17,7 @@ export const UniRadio = (props: UniRadioPropsType) => {
     return (
         <FormControl component="fieldset">
             <FormLabel component="legend">{props.title}</FormLabel>
-            <RadioGroup aria-label={props.title} name={props.title}  onChange={(e) => {props.onChange(e.target.value)}}>
+            <RadioGroup aria-label={props.title} name={props.title} value={props.value} onChange={(e) => {props.onChange(e.target.value)}}>
                 {
                     props.list.map(i => <FormControlLabel key={i.id} value={i.city} control={<Radio />} label={i.city} />)
                 }

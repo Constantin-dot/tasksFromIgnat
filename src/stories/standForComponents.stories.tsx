@@ -5,12 +5,13 @@ import {DeleteButton} from "../common/DeleteButton";
 import {UniButton} from "../common/UniButton";
 import EditableSpan from "../common/EditableSpan";
 import {UniCheckbox} from "../common/UniCheckbox";
+import {UniRadio} from "../common/UniRadio";
+import {UniSelect} from "../common/UniSelect";
 
 
 
 export default {
     title: 'StandForComponents',
-    // component: AddButton,
 };
 
 export const UniversalInput = () => {
@@ -34,5 +35,19 @@ export const UniversalDeleteButton = () => {
 }
 
 export const UniversalEditableSpan = () => {
-    return <EditableSpan item={'new item'} addItem={x => x} setItem={x => x} error={''} setError={x => x}/>
+    return <EditableSpan item={'This is editable span. Change me!'} addItem={x => x} setItem={x => x} error={''} setError={x => x}/>
+}
+
+export const UniversalRadio = () => {
+    return <UniRadio value={'b'} title={'new item'} list={[{id: 1, city: 'a'},
+        {id: 2, city: 'b'},
+        {id: 3, city: 'c'},
+        {id: 4, city: 'd'},]} onChange={x => x}/>
+}
+
+export const UniversalSelect = () => {
+    return <UniSelect way={[{id: 1, way: "a"},
+        {id: 2, way: "b"},
+        {id: 3, way: "c"},
+        {id: 4, way: "d"}]} title={'new item'} onChange={x => x} transport={'a'}/>
 }

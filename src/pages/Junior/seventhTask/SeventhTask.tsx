@@ -19,8 +19,8 @@ const SeventhTask = () => {
         {id: 4, way: "plane"},
     ]
 
-    let [value, setValue] = useState('');
-    let [transport, setTransport] = useState('');
+    let [value, setValue] = useState('Minsk');
+    let [transport, setTransport] = useState('car');
 
     const onChangeForRadio = (city: string) => {
         setValue(city);
@@ -35,6 +35,7 @@ const SeventhTask = () => {
     return (
         <div className={style.seventh}>
             <UniRadio
+                value={value}
                 title={"Cities"}
                 list={list}
                 onChange={onChangeForRadio}
