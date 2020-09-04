@@ -10,7 +10,7 @@ type WayType = {
 type UniSelectPropsType = {
     way: Array<WayType>
     title: string
-    onChange: (way: any) => void
+    onChange: (way: string) => void
     transport: string
 }
 
@@ -37,7 +37,7 @@ export const UniSelect = (props: UniSelectPropsType) => {
                 labelId="demo-simple-select-outlined-label"
                 id="demo-simple-select-outlined"
                 value={props.transport}
-                onChange={(e) => {props.onChange(e.target.value)}}
+                onChange={(e) => {props.onChange(e.target.value as string)}}
                 label="Age"
             >
                 {
