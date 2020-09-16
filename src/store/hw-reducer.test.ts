@@ -1,4 +1,4 @@
-import {Check, hwReducer, Sort} from "./homeWorkReducer";
+import {Check, hwReducer, Sort} from "./homeWork-reducer";
 import {v1} from "uuid";
 
 type UserType = {

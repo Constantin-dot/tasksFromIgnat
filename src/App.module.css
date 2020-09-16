@@ -1,4 +1,4 @@
-.app-wrapper {
+.appWrapper {
     display: grid;
     margin: 0 auto;
     width: 1200px;
@@ -12,6 +12,10 @@
     border: 2px solid #8fff74;
 }
 
-.app-wrapper-content {
+.appWrapperContent {
     grid-area: c;
+}
+
+.loader {
+    margin: 50%;
 }

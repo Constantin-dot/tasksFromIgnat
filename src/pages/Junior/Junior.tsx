@@ -4,6 +4,7 @@ import style from './Junior.module.css';
 import SeventhTask from "./seventhTask/SeventhTask";
 import EighthTask from "./eighthTask/EighthTask";
 import NinthTask from "./ninthTask/NinthTask";
+import TenthTask from "./tenthTask/TenthTask";
 
 const Junior = () => {
 
@@ -13,6 +14,7 @@ const Junior = () => {
             <SeventhTask />
             <EighthTask />
             <NinthTask />
+            <TenthTask />
         </div>
     )
 }

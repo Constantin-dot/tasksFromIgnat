@@ -2,7 +2,7 @@ import React, {useReducer} from "react";
 import style from './EighthTask.module.css';
 import {v1} from "uuid";
 import {UniButton} from "../../../common/UniButton";
-import {Check, hwReducer, Sort} from "../../../store/homeWorkReducer";
+import {Check, hwReducer, Sort} from "../../../store/homeWork-reducer";
 
 const EighthTask = () => {
 
