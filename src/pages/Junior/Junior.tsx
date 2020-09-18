@@ -5,6 +5,7 @@ import SeventhTask from "./seventhTask/SeventhTask";
 import EighthTask from "./eighthTask/EighthTask";
 import NinthTask from "./ninthTask/NinthTask";
 import TenthTask from "./tenthTask/TenthTask";
+import EleventhTask from "./eleventhTask/EleventhTask";
 
 const Junior = () => {
 
@@ -15,6 +16,7 @@ const Junior = () => {
             <EighthTask />
             <NinthTask />
             <TenthTask />
+            <EleventhTask />
         </div>
     )
 }

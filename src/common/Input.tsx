@@ -10,7 +10,7 @@ type InputPropsType = {
     offEditMode?: () => void
 }
 
-export const Input = (props: InputPropsType) => {
+export const Input = React.memo((props: InputPropsType) => {
 
     const onItemChange = (e: ChangeEvent<HTMLInputElement>) => {
         props.setError("");
@@ -43,4 +43,4 @@ export const Input = (props: InputPropsType) => {
             onBlur={props?.offEditMode}
         />
     )
-}
+})
