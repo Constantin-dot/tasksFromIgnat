@@ -2,16 +2,16 @@ import React from "react";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import {FormControl, InputLabel, MenuItem, Select} from "@material-ui/core";
 
-type WayType = {
+type ItemType = {
     id: number
-    way: string
+    item: string
 }
 
 type UniSelectPropsType = {
-    way: Array<WayType>
+    list: Array<ItemType>
     title: string
-    onChange: (way: string) => void
-    transport: string
+    onChange: (item: string) => void
+    value: string
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -36,12 +36,12 @@ export const UniSelect = (props: UniSelectPropsType) => {
             <Select
                 labelId="demo-simple-select-outlined-label"
                 id="demo-simple-select-outlined"
-                value={props.transport}
+                value={props.value}
                 onChange={(e) => {props.onChange(e.target.value as string)}}
                 label="Age"
             >
                 {
-                    props.way.map(i => <MenuItem key={i.id} value={i.way}>{i.way}</MenuItem>)
+                    props.list.map(i => <MenuItem key={i.id} value={i.item}>{i.item}</MenuItem>)
                 }
             </Select>
         </FormControl>

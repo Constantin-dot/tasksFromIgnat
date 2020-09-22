@@ -1,19 +1,24 @@
 .appWrapper {
-    display: grid;
     margin: 0 auto;
     width: 1200px;
-    grid-template-areas: "n c";
-    grid-template-columns: 2fr 10fr;
+}
+
+.darkTheme {
+    background-color: dimgray;
+    color: azure;
+}
+
+.brightTheme {
+    background-color: #000cff;
+    color: #ff0063 ;
 }
 
 .nav {
-    grid-area: n;
-    padding: 20px;
-    border: 2px solid #8fff74;
+    padding: 10px;
 }
 
 .appWrapperContent {
-    grid-area: c;
+
 }
 
 .loader {

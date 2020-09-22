@@ -13,27 +13,61 @@ import {AppRootStateType} from "./store/store";
 
 const App: React.FC = () => {
     const isLoading = useSelector<AppRootStateType, boolean>(state => state.tasks.isLoading)
+    const theme = useSelector<AppRootStateType, string>(state => state.themes.theme)
 
-    if(isLoading) {
+    if (isLoading) {
         return <div className={style.loader}>
-            <CircularProgress  color="secondary" />
+            <CircularProgress color="secondary"/>
         </div>
     }
 
-    return (
-        <HashRouter>
-            <div className={style.appWrapperrapper}>
-                <div className={'nav'}>
-                    <Navbar />
+
+    if (theme === "Dark") {
+        return (
+            <HashRouter>
+                <div className={`${style.appWrapper} ${style.darkTheme}`}>
+                    <div className={style.nav}>
+                        <Navbar/>
+                    </div>
+                    <div className={style.appWrapperContent}>
+                        <Route path={'/pre_junior'} component={PreJunior}/>
+                        <Route path={'/junior'} component={Junior}/>
+                        <Route path={'/junior_plus'} component={JuniorPlus}/>
+                    </div>
                 </div>
-                <div className={style.appWrapperContent}>
-                    <Route path={'/pre_junior'} component={PreJunior} />
-                    <Route path={'/junior'} component={Junior} />
-                    <Route path={'/junior_plus'} component={JuniorPlus} />
+            </HashRouter>
+        )
+    } else if (theme === "Bright") {
+        return (
+            <HashRouter>
+                <div className={`${style.appWrapper} ${style.brightTheme}`}>
+                    <div className={style.nav}>
+                        <Navbar/>
+                    </div>
+                    <div className={style.appWrapperContent}>
+                        <Route path={'/pre_junior'} component={PreJunior}/>
+                        <Route path={'/junior'} component={Junior}/>
+                        <Route path={'/junior_plus'} component={JuniorPlus}/>
+                    </div>
                 </div>
-            </div>
-        </HashRouter>
-    )
+            </HashRouter>
+        )
+    } else {
+        return (
+            <HashRouter>
+                <div className={style.appWrapper}>
+                    <div className={style.nav}>
+                        <Navbar/>
+                    </div>
+                    <div className={style.appWrapperContent}>
+                        <Route path={'/pre_junior'} component={PreJunior}/>
+                        <Route path={'/junior'} component={Junior}/>
+                        <Route path={'/junior_plus'} component={JuniorPlus}/>
+                    </div>
+                </div>
+            </HashRouter>
+        )
+    }
 }
 
 export default App;

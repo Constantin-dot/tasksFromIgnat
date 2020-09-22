@@ -1,54 +1,55 @@
-import React, {useState} from "react";
+import React, {useCallback, useState} from "react";
 import style from './SeventhTask.module.css';
 import {UniRadio} from "../../../common/UniRadio";
 import {UniSelect} from "../../../common/UniSelect";
 
-const SeventhTask = () => {
-    let list = [{id: 1, city: 'Minsk'},
-        {id: 2, city: 'Moscow'},
-        {id: 3, city: 'Kiev'},
-        {id: 4, city: 'Paris'},
-        {id: 5, city: 'Budapest'},
-        {id: 6, city: 'Berlin'},
-        {id: 7, city: 'London'},
-        {id: 8, city: 'Madrid'}];
+const SeventhTask = React.memo(() => {
+    let list1 = [{id: 1, item: 'Minsk'},
+        {id: 2, item: 'Moscow'},
+        {id: 3, item: 'Kiev'},
+        {id: 4, item: 'Paris'},
+        {id: 5, item: 'Budapest'},
+        {id: 6, item: 'Berlin'},
+        {id: 7, item: 'London'},
+        {id: 8, item: 'Madrid'}];
 
-    let way = [{id: 1, way: "car"},
-        {id: 2, way: "bus"},
-        {id: 3, way: "train"},
-        {id: 4, way: "plane"},
+    let list2 = [{id: 1, item: "car"},
+        {id: 2, item: "bus"},
+        {id: 3, item: "train"},
+        {id: 4, item: "plane"},
     ]
 
     let [value, setValue] = useState('Minsk');
     let [transport, setTransport] = useState('car');
 
-    const onChangeForRadio = (city: string) => {
-        setValue(city);
-    }
+    const onChangeForRadio = useCallback((item: string) => {
+        setValue(item);
+    }, [])
 
-    const onChangeForSelect = (way: string) => {
-        if(way) {
-            setTransport(way);
+    const onChangeForSelect = useCallback((item: string) => {
+        if(item) {
+            setTransport(item);
         }
-    }
+    }, [])
 
     return (
         <div className={style.seventh}>
             <UniRadio
+                color={"secondary"}
                 value={value}
                 title={"Cities"}
-                list={list}
+                list={list1}
                 onChange={onChangeForRadio}
             />
             <UniSelect
                 title={"Transport"}
-                way={way}
+                list={list2}
                 onChange={onChangeForSelect}
-                transport={transport}
+                value={transport}
             />
             {`Your are going to travel to ${value} on a ${transport}.`}
         </div>
     )
-}
+})
 
 export default SeventhTask;

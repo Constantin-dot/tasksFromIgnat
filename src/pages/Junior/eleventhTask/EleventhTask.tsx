@@ -5,16 +5,16 @@ import {DoubleRange} from "../../../common/DoubleRange";
 
 
 const EleventhTask = React.memo(() => {
-    const [value, setValue] = React.useState<number>(1);
+    const [value, setValue] = React.useState<number>(10);
     const [doubleValue, setDoubleValue] = React.useState<number[]>([1, 10]);
 
     const onChange = useCallback((event: any, newValue: number | number[]) => {
         setValue(newValue as number);
-    }, [value]);
+    }, []);
 
     const onChangeForDoubleValue = useCallback((event: any, newValue: number | number[]) => {
         setDoubleValue(newValue as number[]);
-    }, [doubleValue]);
+    }, []);
 
     return (
         <div className={style.back}>

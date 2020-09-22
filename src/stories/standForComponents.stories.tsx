@@ -14,6 +14,10 @@ export default {
     title: 'StandForComponents',
 };
 
+export const JuniorPlus = () => {
+    return <JuniorPlus />
+}
+
 export const UniversalInput = () => {
     return <Input setError={x => x} setItem={x => x} item={''} error={''} addItem={x => x}/>;
 }
@@ -39,15 +43,16 @@ export const UniversalEditableSpan = () => {
 }
 
 export const UniversalRadio = () => {
-    return <UniRadio value={'b'} title={'new item'} list={[{id: 1, city: 'a'},
-        {id: 2, city: 'b'},
-        {id: 3, city: 'c'},
-        {id: 4, city: 'd'},]} onChange={x => x}/>
+    return <UniRadio color={"primary"} value={'b'} title={'new item'} list={[{id: 1, item: 'a'},
+        {id: 2, item: 'b'},
+        {id: 3, item: 'c'},
+        {id: 4, item: 'd'},]} onChange={x => x}/>
 }
 
 export const UniversalSelect = () => {
-    return <UniSelect way={[{id: 1, way: "a"},
-        {id: 2, way: "b"},
-        {id: 3, way: "c"},
-        {id: 4, way: "d"}]} title={'new item'} onChange={x => x} transport={'a'}/>
+    return <UniSelect list={[{id: 1, item: "a"},
+        {id: 2, item: "b"},
+        {id: 3, item: "c"},
+        {id: 4, item: "d"}]} title={'new item'} onChange={x => x} value={'a'}/>
 }
+
