@@ -2,13 +2,16 @@
     margin: 0 auto;
     width: 1200px;
 }
+.Light {
 
-.darkTheme {
+}
+
+.Dark {
     background-color: dimgray;
     color: azure;
 }
 
-.brightTheme {
+.Bright {
     background-color: #000cff;
     color: #ff0063 ;
 }
