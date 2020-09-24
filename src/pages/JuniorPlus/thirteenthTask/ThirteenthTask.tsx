@@ -13,10 +13,9 @@ const ThirteenthTask = React.memo(() => {
 
     const setCheckBoxHandler = useCallback(() => {
         dispatch(setCheckBoxAC(!isChecked))
-    }, [])
+    }, [isChecked])
 
     const changeCheckBoxHandler = useCallback(() => {
-
         dispatch(changeCheckboxTC(isChecked))
     }, [isChecked])
 
