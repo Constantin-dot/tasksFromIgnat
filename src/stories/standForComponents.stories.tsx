@@ -23,7 +23,7 @@ export const UniversalInput = () => {
 }
 
 export const UniversalCheckbox = () => {
-    return <UniCheckbox changeStatus={x => x} isDone={true} id={1} case={'Study'} level={'high'}/>;
+    return <UniCheckbox onChange={() => {}} isDone={true}/>
 }
 
 export const UniversalButton = () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import yellow from '@material-ui/core/colors/red';
+// import yellow from '@material-ui/core/colors/red';
 import {FormControl, FormControlLabel, FormLabel, Radio, RadioGroup} from "@material-ui/core";
 
 type ListType = {
@@ -8,7 +8,7 @@ type ListType = {
 }
 
 type UniRadioPropsType = {
-    color: string
+    color?: 'primary' | 'secondary' | 'default'
     value: string
     title: string
     list: Array<ListType>
@@ -16,7 +16,7 @@ type UniRadioPropsType = {
 }
 
 export const UniRadio = (props: UniRadioPropsType) => {
-    const accent = yellow[500];
+    // const accent = yellow[500];
     return (
         <FormControl component="fieldset">
             <FormLabel component="legend">{props.title}</FormLabel>

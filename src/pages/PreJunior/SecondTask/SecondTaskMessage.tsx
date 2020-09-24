@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {ChangeEvent} from 'react';
 import classes from './SecondTask.module.css';
 import {CasesType, StateType} from './SecondTask';
 import {UniCheckbox} from "../../../common/UniCheckbox";
 import {DeleteButton} from "../../../common/DeleteButton";
 import {UniButton} from "../../../common/UniButton";
-// import {UniButton} from "../../../common/UniButton";
+import {FormControlLabel} from "@material-ui/core";
 
 type PropsType = {
     state: StateType
@@ -16,6 +16,7 @@ type PropsType = {
 }
 
 function SecondTaskMessage(props: PropsType)  {
+
 
     return (
         <div className={classes.wrap}>
@@ -29,14 +30,16 @@ function SecondTaskMessage(props: PropsType)  {
                         props.cases.map(c => {
 
                             return <div key={c.id} className={c.isDone ? "is-done" : ""}>
-                                <UniCheckbox
-                                    changeStatus={props.changeStatus}
-                                    isDone={c.isDone}
-                                    id={c.id}
-                                    case={c.case}
-                                    level={c.level}
+                                <FormControlLabel
+                                    control={
+                                        <UniCheckbox
+                                            onChange={() => props.changeStatus(c.id, !c.isDone)}
+                                            isDone={c.isDone} color={"primary"}
+                                        />
+                                    }
+                                    label={c.case + ' - ' + c.level}
                                 />
-                                <DeleteButton onClick={props.removeCases} id={c.id}/>
+                                <DeleteButton onClick={props.removeCases} id={c.id} color={"primary"}/>
                             </div>
                         })
                     }

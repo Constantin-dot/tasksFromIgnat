@@ -1,8 +1,9 @@
 import React from "react";
 import {IconButton} from "@material-ui/core";
-import { Delete} from "@material-ui/icons";
+import {Delete} from "@material-ui/icons";
 
 type DeleteButtonPropsType = {
+    color?: any
     onClick: (id: number) => void
     id: number
 }
@@ -14,7 +15,7 @@ export const DeleteButton = (props: DeleteButtonPropsType) => {
 
     return (
         <IconButton onClick={deleteItem}>
-            <Delete />
+            <Delete color={props.color}/>
         </IconButton>
     )
 }
